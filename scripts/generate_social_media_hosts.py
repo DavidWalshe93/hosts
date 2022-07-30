@@ -64,7 +64,9 @@ def display_raw_links(names: List[str]):
     :param names: The names of the content.
     """
     for name in names:
-        print(f"https://raw.githubusercontent.com/DavidWalshe93/hosts/main/hosts/social/{name}")
+        print(f"https://raw.githubusercontent.com/DavidWalshe93/hosts/main/hosts/social/{name}", end=" ")
+
+    print()
 
 
 def write_out_divided_content(items: Dict[str, List[str]]) -> None:
@@ -83,7 +85,7 @@ def write_out_divided_content(items: Dict[str, List[str]]) -> None:
         name = name.replace("# ", "")
         file_name = name.replace(" ", "_").lower()
         link_names.append(file_name)
-        with open(SOCIAL_DIR / f"{file_name}.txt", "w") as f:
+        with open(SOCIAL_DIR / f"{file_name}", "w") as f:
             f.write(f"# Target: {name.capitalize()}\n")
             f.write(f"# Date:   {datetime.now().strftime('%Y-%m-%d')}\n")
             f.write("\n")
