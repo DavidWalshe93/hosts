@@ -64,7 +64,7 @@ def display_raw_links(names: List[str]):
     :param names: The names of the content.
     """
     for name in names:
-        print(f"https://raw.githubusercontent.com/DavidWalshe93/hosts/main/hosts/social/{name}", end=" ")
+        print(f"https://raw.githubusercontent.com/DavidWalshe93/hosts/main/hosts/social/{name}".replace(" ", ""), end=" ")
 
     print()
 
