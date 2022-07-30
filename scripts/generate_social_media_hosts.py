@@ -67,7 +67,7 @@ def write_out_divided_content(items: Dict[str, List[str]]) -> None:
     for name, host_text in items.items():
         hosts = host_text.split("\n")
         hosts = [host.strip() for host in hosts if host.startswith("#") is False]
-        hosts = [host for host in hosts if host != ""]
+        hosts = [host.replace("127.0.0.1", "0.0.0.0") for host in hosts if host != ""]
 
         name = name.replace("# ", "")
         file_name = name.replace(" ", "_").lower()

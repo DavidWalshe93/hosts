@@ -1,4 +1,4 @@
 # Target: Google plus
 # Date:   2022-07-30
 
-127.0.0.1 plus.google.com
+0.0.0.0 plus.google.com
