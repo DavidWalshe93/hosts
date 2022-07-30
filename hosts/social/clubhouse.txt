@@ -1,0 +1,11 @@
+# Target: Clubhouse
+# Date:   2022-07-30
+
+127.0.0.1 joinclubhouse.com
+127.0.0.1 www.joinclubhouse.com
+127.0.0.1 welcome.joinclubhouse.com
+127.0.0.1 community.joinclubhouse.com
+127.0.0.1 staging.joinclubhouse.com
+127.0.0.1 admin-staging.joinclubhouse.com
+127.0.0.1 ios.joinclubhouse.com
+127.0.0.1 testflight.joinclubhouse.com
