@@ -57,6 +57,16 @@ def divide_content_based_on_provider() -> Dict[str, List[str]]:
     return items
 
 
+def display_raw_links(names: List[str]):
+    """
+    Displays all the raw github links for the content.
+
+    :param names: The names of the content.
+    """
+    for name in names:
+        print(f"https://raw.githubusercontent.com/DavidWalshe93/hosts/main/hosts/social/{name}")
+
+
 def write_out_divided_content(items: Dict[str, List[str]]) -> None:
     """
     Write out the divided content.
@@ -64,6 +74,7 @@ def write_out_divided_content(items: Dict[str, List[str]]) -> None:
     :param items: The divided content.
     :return: None.
     """
+    link_names = []
     for name, host_text in items.items():
         hosts = host_text.split("\n")
         hosts = [host.strip() for host in hosts if host.startswith("#") is False]
@@ -71,11 +82,14 @@ def write_out_divided_content(items: Dict[str, List[str]]) -> None:
 
         name = name.replace("# ", "")
         file_name = name.replace(" ", "_").lower()
+        link_names.append(file_name)
         with open(SOCIAL_DIR / f"{file_name}.txt", "w") as f:
             f.write(f"# Target: {name.capitalize()}\n")
             f.write(f"# Date:   {datetime.now().strftime('%Y-%m-%d')}\n")
             f.write("\n")
             f.write("\n".join(hosts))
+
+    display_raw_links(link_names)
 
 
 if __name__ == '__main__':
